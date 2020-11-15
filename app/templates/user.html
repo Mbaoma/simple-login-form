@@ -1,0 +1,19 @@
+{% extends "main.html" %}{% block content %} {% if title %}
+<title> {{ title }}
+</title>
+{% else %}
+<title> User </title>
+{% endif %}
+
+<h4>
+    Welcome dear, {{ current_user.username }} to my new leaf
+</h4>
+
+{% for line in thoughts %}
+<p>
+    <h5>
+        {{ line.person }} : {{ line.thought }}
+    </h5>
+</p>
+{% endfor %}
+</body>{% endblock %}

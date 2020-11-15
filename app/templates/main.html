@@ -1,0 +1,36 @@
+<!DOCtype html>
+
+<head>
+    <link type="text/css" href="{{ url_for('static', filename='./css/main.css') }}" rel="stylesheet"> {% if title %}
+    <title> {{ title }}
+    </title>
+    {% else %}
+    <title> New Leaf</title>
+    {% endif %}
+
+</head>
+
+<body>
+    {% block content %}
+    <div>
+        <h3>
+            Hi, what would you want to do today? </h3>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }} ">Explore </a> {% else %}
+        <a href="{{ url_for('logout') }}"> Logout </a> {% endif %}
+    </div>
+
+    <div>
+        <h5>
+            <a href="{{ url_for('signup') }}"> New here?</a>
+        </h5>
+    </div>
+    <hr> {% with messages=get_flashed_messages() %} {% if messages %}
+    <ul> {% for message in messages %}
+
+        <li> {{ message }} </li> {% endfor %}
+    </ul> {% endif %} {% endwith %}
+</body>
+{% endblock %}
+
+</html>
