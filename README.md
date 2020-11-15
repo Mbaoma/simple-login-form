@@ -15,7 +15,11 @@ This is a simle login page. The code shows form validation for HTML forms using 
 
 -   Install the requirements needed
 ```
-pip install requirements.txt
+pip install -r requirements.txt
+```
+-   Create your virtual environment by running
+```
+py -m virtualenv venv
 ```
 
 -   Activate your virtual environemt by running the following command in your terminal
